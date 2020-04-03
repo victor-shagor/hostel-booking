@@ -1,0 +1,20 @@
+version: "3"
+services:
+  dev:
+    image: node:10
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    command: bash -c "yarn install && yarn run create && yarn populate && yarn start"
+    ports:
+      - 3001:3001
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+      SECRET: sagoro
+  postgres:
+    image: postgres:9.6.2-alpine

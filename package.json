@@ -1,0 +1,42 @@
+{
+  "name": "compexafrica",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "babel-node app.js",
+    "create": "babel-node ./migrations/createTables.js",
+    "drop": "babel-node ./migrations/dropTables.js",
+    "populate": "babel-node ./migrations/populate.js",
+    "test": "cross-env NODE_ENV=test yarn run drop && cross-env NODE_ENV=test yarn run create && cross-env NODE_ENV=test yarn run populate && cross-env NODE_ENV=test jest --coverage"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime-corejs3": "^7.9.2",
+    "@databases/pg": "^2.0.0",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "babel-node": "^0.0.1-security",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.1",
+    "node-pg-migrate": "^4.4.0",
+    "nodemon": "^2.0.2",
+    "pg": "^8.0.0",
+    "socket.io": "^2.3.0",
+    "supertest": "^4.0.2"
+  }
+}
