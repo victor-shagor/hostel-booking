@@ -45,7 +45,10 @@ Hostel booking is an application that enables a registered user book rooms
       SECRET
       password
       password1
+    - Run `npm run create/yarn run create` to create database table
+    _ Run `npm run populate/yarn run populate` to seed database
     - Run `npm start/yarn start` to start the server
+    - OR just run docker-compose up automate the whole proccess
   ```
 
 ### Testing
